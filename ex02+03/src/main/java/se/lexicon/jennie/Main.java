@@ -1,8 +1,5 @@
 package se.lexicon.jennie;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -12,6 +9,7 @@ public class Main {
         cb.setCategory(Category.CHILD);
         cb.setYear(2023);
         cb.setPages(20);
+        cb.loan();
 
         YoungAdultBook yab = new YoungAdultBook();
         yab.setTitle("The young adult book");
@@ -19,6 +17,7 @@ public class Main {
         yab.setCategory(Category.ADULT);
         yab.setYear(2023);
         yab.setPages(250);
+        yab.loan();
 
         ReferenceBook rb = new ReferenceBook();
         rb.setTitle("The reference book");
@@ -41,7 +40,7 @@ public class Main {
         allBooks[2] = rb;
          */
 
-        System.out.println("LOANABLE BOOKS:");
+        System.out.println("\nLOANABLE BOOKS:");
 
         /*
         Iterates through the array and only prints out the books
@@ -73,7 +72,7 @@ public class Main {
 
         System.out.println("\nADULT BOOKS:");
 
-        // prints out the books that have the category ADULT:
+        // Prints out the books that have the category ADULT:
         for(int i = 0; i < allBooks.length; i++) {
             if(allBooks[i].getCategory() == Category.ADULT) {
                 System.out.println("- " + allBooks[i].getTitle());
